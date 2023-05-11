@@ -22,9 +22,9 @@ elColonna.append(numeriDaRicordare);
 //Chiedere all'utente di ricordarsi i numeri precenti
 
 function rispostaUtente (){
-    let numeriRicordatiUser = prompt ("Inserisci qui' i numeri");
+    let numeriRicordatiUser = parseInt(prompt ("Inserisci qui' i numeri"));
     console.log(numeriRicordatiUser);
-    document.getElementById("container").innerHTML += numeriRicordatiUser;
+    //document.getElementById("container").innerHTML += numeriRicordatiUser;
 
     //NON FUNIONA PERCHE?
     elColonna.classList.add("inactive");
@@ -32,6 +32,14 @@ function rispostaUtente (){
 //Timing Function
 setTimeout(rispostaUtente,1000);
 
+//Creo condizione per vedere se i numeri inseriti dall'utente sono uguali a quelli generati random
+if (numeriDaRicordare.includes(numeriRicordatiUser)) {
+    container.innerHTML += `BRAVOO HAI VINTO`;
+}
+
+else{
+    container.innerHTML += `Hai Perso`;
+}
 
 
 
