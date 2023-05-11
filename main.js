@@ -8,12 +8,16 @@
 //Individuate gli elementi di cui avete bisogno per realizzare il programma.
 
 //Container 
-const container = document.getElementById("container");
-console.log(container);
+const elContainer = document.getElementById("container");
+console.log(elContainer);
+
+//Colonna
+const elColonna = document.getElementById("col");
+console.log(elColonna);
 
 //Genera numeri random da ricordare
 const numeriDaRicordare = generaOrdineNumeriRandom(1, 5);
-container.append(numeriDaRicordare);
+elColonna.append(numeriDaRicordare);
 
 //Chiedere all'utente di ricordarsi i numeri precenti
 
@@ -21,17 +25,17 @@ function rispostaUtente (){
     let numeriRicordatiUser = prompt ("Inserisci qui' i numeri");
     console.log(numeriRicordatiUser);
     document.getElementById("container").innerHTML += numeriRicordatiUser;
-}
 
-setTimeout(rispostaUtente,3000);
-
-
-
-
-//FUNZIONI
+    //NON FUNIONA PERCHE?
+    elColonna.classList.add("inactive");
+    }
 //Timing Function
+setTimeout(rispostaUtente,1000);
 
 
+
+
+//FUNZIONI GENERALI
 //create order random number
 function generaOrdineNumeriRandom(min, max) {
     const numeriRandom = [];
