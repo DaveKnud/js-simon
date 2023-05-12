@@ -22,25 +22,30 @@ elColonna.append(numeriDaRicordare);
 //Chiedere all'utente di ricordarsi i numeri precenti
 
 function rispostaUtente (){
+    for (let i = 0; i < 5; i++){
     var numeriRicordatiUser = parseInt(prompt ("Inserisci qui' i numeri"));
-    console.log(numeriRicordatiUser);
-    //document.getElementById("container").innerHTML += numeriRicordatiUser;
+    
+    
+        console.log(numeriRicordatiUser);
+        //document.getElementById("container").innerHTML += numeriRicordatiUser;
 
-    //NON FUNIONA PERCHE?
-    elColonna.classList.add("inactive");
+        //NON FUNIONA PERCHE?
+        elColonna.classList.add("inactive");
 
-    //Creo condizione per vedere se i numeri inseriti dall'utente sono uguali a quelli generati random
-    if (numeriDaRicordare.includes (numeriRicordatiUser)) {
-        elContainer.innerHTML += `BRAVOO HAI VINTO`;
-        console.log('hai vinto');
-    }
+        //Creo condizione per vedere se i numeri inseriti dall'utente sono uguali a quelli generati random
+        if (numeriDaRicordare.includes (numeriRicordatiUser)) {
+            console.log('hai vinto');
+            elContainer.innerHTML += `Hai indovinato il numero: ` + numeriRicordatiUser;
+        }
 
-    else{
-        elContainer.innerHTML += `Hai Perso`;
-        console.log('hai perso');
+        else{
+            console.log('hai perso');
+            console.log(numeriRicordatiUser);
+            elContainer.innerHTML += `Il numero: ` + numeriRicordatiUser + `non e' corretto`;
+        }
+        
     }
 }
-
 //Timing Function
 setTimeout(rispostaUtente,1000);
 
